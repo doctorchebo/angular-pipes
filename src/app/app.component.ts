@@ -20,4 +20,16 @@ export class AppComponent {
       new Date(20, 1, 2024)
     ),
   ];
+
+  appStatus = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+      resolve('online')
+    }, 2000)
+  })
+
+  onAddNewServer() {
+    this.servers.push(
+      new Server('small', 'Test Server', 'offline', new Date(17, 1, 2024))
+    );
+  }
 }
